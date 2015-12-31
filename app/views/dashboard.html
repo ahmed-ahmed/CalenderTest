@@ -1,0 +1,91 @@
+<div class="row">
+	<div class="col-md-4">
+		<h3>Accounts</h3>
+
+		 
+
+		<accordion>
+		    <accordion-group is-open="status.open">
+		      <accordion-heading>
+		      <div style="width:100%;">
+		      	<div style="width:50%; float:left">Cash</div>
+		      	<div style="width:50%; float:right">3,985,13.89</div>
+		      	<div  style="clear:left"></div>
+		      </div>
+		      </accordion-heading>
+				<table class="table table-bordered">
+			<tr ng-repeat="account in accounts">
+				<td>
+					<strong>{{account.name}}</strong><br/>
+					<small>{{account.type}}</small><br/>
+					<small>Balance: {{account.balance}}</small>
+				</td>
+			</tr>
+
+			
+		</table>
+
+		    </accordion-group>
+		    <accordion-group is-open="status.open">
+		      <accordion-heading>
+		      <div>
+		      	<div style="width:50%; float:left">Credit Cards</div>
+		      	<div style="width:50%; float:right">3,985,13.89</div>
+		      	<div  style="clear:left"></div>
+		      </div>
+		      </accordion-heading>
+		    </accordion-group>
+		    <accordion-group is-open="status.open">
+		      <accordion-heading>
+		      <div>
+		      	<div style="width:50%; float:left">Assets</div>
+		      	<div style="width:50%; float:right">3,985,13.89</div>
+		      	<div  style="clear:left"></div>
+		      </div>
+		      </accordion-heading>
+		    </accordion-group>		    
+		  </accordion>
+
+
+		<!-- <table class="table table-bordered">
+			<tr ng-repeat="account in accounts">
+				<td>
+					<strong>{{account.name}}</strong><br/>
+					<small>{{account.type}}</small><br/>
+					<small>Balance: {{account.balance}}</small>
+				</td>
+			</tr>
+
+			
+		</table> -->
+	</div>
+
+	<div class="col-md-8">
+		<h3>Transactions</h3>
+		<table class="table table-hover table-condensed">
+			<tr>
+				<th>Description</th>
+				<th>Category</th>
+				<th>amount</th>
+			</tr>
+			<tr ng-repeat="t in transactions">
+				<td>{{t.description}}</td>
+				<td>
+					<edit-category category="{{t.category}}" categories="categories" selection-changed="categorySelected"></edit-category>
+				</td>
+				<td>{{t.value}}</td>
+			</tr>
+			 
+			<tr>
+				<td></td>
+				<td></td>
+				<td>total: 235.23</td>
+			</tr>
+
+		</table>
+	    <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="7"
+			previous-text="‹" next-text="›" first-text="«" last-text="»" boundary-links="true" rotate="false"
+	    ></pagination>
+
+	</div>
+</div>

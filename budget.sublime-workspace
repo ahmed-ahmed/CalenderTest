@@ -1,0 +1,357 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"an",
+				"angular"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"c",
+				"class	Attr"
+			],
+			[
+				"cate",
+				"categories"
+			],
+			[
+				"bu",
+				"budget"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/index.html",
+			"settings":
+			{
+				"buffer_size": 4689,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "grunt",
+		"selected_items":
+		[
+			[
+				"grunt",
+				"Grunt"
+			],
+			[
+				"git pus",
+				"Git: Push"
+			],
+			[
+				"gru",
+				"Grunt"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 233.0,
+		"history":
+		[
+			"testem",
+			"grunt ",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/ama29/budget",
+		"/home/ama29/budget/.tmp/styles",
+		"/home/ama29/budget/app",
+		"/home/ama29/budget/bower_components/angular-bootstrap"
+	],
+	"file_history":
+	[
+		"/home/ama29/budget/app/scripts/directives/edit-category.html",
+		"/home/ama29/budget/app/styles/main.css",
+		"/home/ama29/budget/app/scripts/directives/editcategory.js",
+		"/home/ama29/budget/app/scripts/directives/progress.js",
+		"/home/ama29/budget/app/scripts/services/service.js",
+		"/home/ama29/budget/app/scripts/services/transactions.js",
+		"/home/ama29/budget/app/views/dashboard.html",
+		"/home/ama29/budget/app/scripts/app.js",
+		"/home/ama29/budget/app/scripts/controllers/dashboard.js",
+		"/home/ama29/budget/app/scripts/directives/budget-progress.js",
+		"/home/ama29/budget/app/scripts/services/data.js",
+		"/home/ama29/scifinder/web/xml/initatingaction_df7651d0-efc8-4a04-8519-1372caca2c69.xml",
+		"/home/ama29/budget/app/views/budget.html",
+		"/home/ama29/budget/app/scripts/directives/budget-progress.html",
+		"/home/ama29/budget/app/views/categories.html",
+		"/home/ama29/budget/app/scripts/controllers/categories.js",
+		"/home/ama29/budget/app/index.html",
+		"/home/ama29/budget/app/views/accounts.html",
+		"/home/ama29/budget/app/views/budgets.html",
+		"/home/ama29/budget/app/scripts/controllers/budgets.js",
+		"/home/ama29/budget/app/scripts/controllers/budget.js",
+		"/home/ama29/budget/Gruntfile.js",
+		"/home/ama29/New Folder/app/server.js",
+		"/home/ama29/New Folder/app/database.js",
+		"/home/ama29/New Folder/run.js",
+		"/home/ama29/budget/app/views/account.html",
+		"/home/ama29/budget/app/scripts/controllers/account.js",
+		"/home/ama29/budget/app/scripts/controllers/accounts.js",
+		"/home/ama29/scifinder/web/rest/xml/initatingaction_b0aed063-7aec-4a88-814f-50dd2f38d743.xml",
+		"/home/ama29/scifinder/web/rest/xml/initatingaction_c226848e-25c9-4e8d-a600-47732c3797c5.xml",
+		"/home/ama29/scifinder/web/rest/xml/initatingaction_bdceb81d-cb44-4d17-8cc1-86caf31412fd.xml",
+		"/home/ama29/scifinder/web/rest/xml/initatingaction_436bc49a-b658-4ce0-a6b6-dcf7555be09d.xml",
+		"/home/ama29/scifinder/web/rest/xml/activity_690a4daf-d830-4061-9b43-fba349e0851d.xml",
+		"/home/ama29/scifinder/web/rest/xml/activity_0ce88d32-02de-42db-9e45-94eca741a920.xml",
+		"/home/ama29/scifinder/web/rest/xml/activity_65a23fda-859c-4ec0-bbca-966cd1b4737f.xml",
+		"/home/ama29/scifinder/web/rest/xml/initatingaction_09f1824f-ff38-4d52-98f9-06e65375a51f.xml",
+		"/home/ama29/scifinder/web/rest/xml/activity_e6ebe5c8-af71-40b7-ba7c-da3d283bc752.xml",
+		"/home/ama29/scifinder/web/rest/xml/initatingaction_3d64e1a8-c127-4a0f-951c-75b6c2784f4b.xml",
+		"/home/ama29/scifinder/web/rest/xml/initatingaction_b9794e50-fa51-4f3e-9897-d8dcc0c7f6a0.xml",
+		"/home/ama29/scifinder/web/rest/xml/activity_e21544f6-6d48-41d4-b11a-d0ba96ccc018.xml",
+		"/home/ama29/scifinder/web/rest/xml/activity_9f109317-b4a9-4c4f-bf23-db5d36311408.xml",
+		"/home/ama29/scifinder/web/rest/xml/Done/100.substancesearch/activity_3c2fff52-20b3-4dff-a567-b0967210c5fc.xml",
+		"/home/ama29/budget/gulp/watch.js",
+		"/home/ama29/budget/package.json",
+		"/home/ama29/budget/karma.conf.js",
+		"/home/ama29/budget/gulpfile.js",
+		"/home/ama29/budget/testem.json",
+		"/home/ama29/budget/test/spec/controllers/account.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Account",
+			"serve",
+			"ui"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"account"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4689,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3579,
+								3579
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1140.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 328.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 124.0
+	},
+	"pinned_build_system": "",
+	"project": "budget.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"transactions.js",
+				"app/scripts/services/transactions.js"
+			],
+			[
+				"service.js",
+				"app/scripts/services/service.js"
+			],
+			[
+				"udget-progress.js",
+				"app/scripts/directives/budget-progress.js"
+			],
+			[
+				"editcategory.js",
+				"app/scripts/directives/editcategory.js"
+			],
+			[
+				"dashboard.js",
+				"app/scripts/controllers/dashboard.js"
+			],
+			[
+				"serv",
+				"app/scripts/services/service.js"
+			],
+			[
+				"index",
+				"app/index.html"
+			],
+			[
+				"app",
+				"app/scripts/app.js"
+			],
+			[
+				"app.",
+				"app/scripts/app.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/budgetApi/budget.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 269.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

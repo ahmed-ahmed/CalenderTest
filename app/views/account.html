@@ -1,0 +1,28 @@
+<h1>{{account.name}}</h1>
+
+<div>
+	<h2>Details</h2>
+	<div class="row">
+		<div>name</div>
+		<div>{{account.name}}</div>
+	</div>
+</div>
+
+<div class="row">
+	<table class="table">
+		<tr>
+			<td>Id</td>
+			<td>Description</td>
+			<td>Date</td>
+			<td>Category</td>
+			<td>Value</td>
+		</tr>
+		<tr ng-repeat="t in account.transactions">
+			<td>{{t.id}}</td>
+			<td>{{t.description}}</td>
+			<td>{{t.date}}</td>
+			<td>{{t.category.name}}</td>
+			<td>{{t.value}}</td>
+		</tr>
+	</table>
+</div>

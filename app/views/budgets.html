@@ -1,0 +1,16 @@
+<h1>Budgets</h1>
+
+<table class="table">
+	<tr>
+		<td>Id</td>
+		<td>Name</td>
+		<td></td>
+	</tr>
+
+	<tr ng-repeat="budget in budgets">
+		<td>{{budget.id}}</td>
+		<td>{{budget.name}}</td>
+		<td><a ng-href="#/budget/{{budget.id}}">Details</a></td>
+	</tr>
+
+</table>

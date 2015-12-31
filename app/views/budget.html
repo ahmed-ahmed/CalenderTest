@@ -1,0 +1,41 @@
+<h1>{{id}}</h1>
+<div  class="row">
+	<h2>Details</h2>
+	<div>
+		<div>name: </div>
+		<div>{{budget.name}}</div>
+		<div>start:</div>
+		<div>{{budget.startDate}}</div>
+		<div>End:</div>
+		<div>{{budget.endDate}}</div>
+	</div>
+</div>
+<br/>
+<div class="row">
+	<table class="table">
+		<tr>
+			<td>category</td>
+			<td>spent</td>
+			<td>remaining</td>
+			<td>goal</td>
+			<td>avarage</td>
+			<td>Date</td>
+			<td></td>
+
+		</tr>
+		<tr ng-repeat="t in budget.goals">
+			<td>{{t.category.name}}</td>
+			<td>{{t.spent}}</td>
+			<td>{{t.remaining}}</td>
+			<td>{{t.goal}}</td>
+			<td>{{t.avarage}}</td>
+			<td>
+				{{budget.startDate}} <br>
+				{{budget.endDate}}
+			</td>
+			<td>
+				<budget-progress goal="t.goal"></budget-progress>
+			</td>
+		</tr>
+	</table>
+</div>
