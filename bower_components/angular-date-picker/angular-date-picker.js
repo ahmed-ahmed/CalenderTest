@@ -28,9 +28,11 @@
 + '    </div>'
 + '    <div class="_days" ng-click="pickDay($event)">'
 + '        <div class="_day-of-week" ng-repeat="dayOfWeek in daysOfWeek" title="{{ dayOfWeek.fullName }}">{{ dayOfWeek.firstLetter }}</div>'
-+ '        <div class="_day -padding" ng-repeat="day in leadingDays" data-month-offset="-1">{{ day }}</div>'
-+ '        <div class="_day" ng-repeat="day in days" ng-class="{ \'-selected\': (day === selectedDay), \'-today\': (day === today) }">{{ day }}</div>'
-+ '        <div class="_day -padding" ng-repeat="day in trailingDays" data-month-offset="1">{{ day }}</div>'
++ '        <div class="_day -padding" ng-repeat="day in leadingDays" data-month-offset="-1">{{ day.name }}</div>'
++ '        <div class="_day" ng-repeat="day in days" ng-class="{ \'-selected\': (day.selected), \'-today\': (day.name === today) }"  ng-click="pickDay1(day)">'
++ '             {{ day.name }}'
++ '        </div>'
++ '        <div class="_day -padding" ng-repeat="day in trailingDays" data-month-offset="1">{{ day.name }}</div>'
 + '    </div>'
 + '</div>'
         ;
@@ -43,10 +45,14 @@
             scope: {
                 onDateSelected: '&',
                 formatDate: '=', // @todo breaking change: change to & to allow use of date filter directly
-                parseDate: '=' // @todo change to &
+                parseDate: '=',// @todo change to &,
+                selectedDates: '='
             },
 
             link: function ($scope, $element, $attributes, ngModel) {
+                if(!$scope.selectedDates){
+                    $scope.selectedDates = [];
+                }
                 var selectedDate = null,
                     days = [], // Slices of this are used for ngRepeat
                     months = [],
@@ -54,7 +60,7 @@
                     firstDayOfWeek = ($locale.DATETIME_FORMATS.FIRSTDAYOFWEEK || 6) + 1 % 7;
 
                 for (var i = 1; i <= 31; i++) {
-                    days.push(i);
+                    days.push({name:i, selected: false});
                 }
 
                 for (var i = 0; i < 12; i++) {
@@ -81,6 +87,23 @@
                     $scope.month = date.getMonth();
 
                     var now = new Date();
+
+
+                    //reset the date selection 
+                    for (var i = 0; i <= 30; i++) {                       
+                        var currentday = days[i];
+                        currentday.selected = false;
+                        var currentdayDate = new Date($scope.year, $scope.month,  i+1);
+                        for(var j = $scope.selectedDates.length  - 1; j >= 0; j--) {
+                            var selectedDate = $scope.selectedDates[j];
+                            if(currentdayDate.getFullYear() === selectedDate.getFullYear() && 
+                                currentdayDate.getMonth() === selectedDate.getMonth() && 
+                                currentdayDate.getDate() === selectedDate.getDate()){
+                                currentday.selected = true;
+                            }  
+                        }                                           
+                    }
+
 
                     $scope.today = now.getFullYear() === $scope.year && now.getMonth() === $scope.month
                         ? now.getDate()
@@ -131,7 +154,54 @@
                     setYearAndMonth(date);
                 };
 
+                $scope.pickDay1 = function (day) {
+                    if(day.selected){
+                        day.selected = false;
+                        var index = 0; 
+
+                        for(var i = $scope.selectedDates.length  - 1; i >= 0; i--) {
+                            var selectedDate = $scope.selectedDates[i];
+                            if($scope.year === selectedDate.getFullYear() && $scope.month === selectedDate.getMonth() && day.name === selectedDate.getDate()){
+                                $scope.selectedDates.splice(i, 1);
+                                return;
+                            }
+                        }
+
+                        
+                    } else {
+                        day.selected = true;
+                        var selectedDate = new Date($scope.year, $scope.month,  day.name);
+                        $scope.selectedDates.push(selectedDate);
+                    }
+
+                    // var target = angular.element(evt.target);
+
+                    // if (target.hasClass('_day')) {
+                    //     var monthOffset = target.attr('data-month-offset');
+
+                    //     if (monthOffset) {
+                    //         $scope.changeMonthBy(parseInt(monthOffset, 10));
+                    //     }
+
+                    //     var day = parseInt(target.text(), 10);
+
+                    //     $scope.selectedDay = day;
+                    //     selectedDate = new Date($scope.year, $scope.month, day);
+                    //     $scope.selectedDates.push(selectedDate);
+
+                    //     if (ngModel) {
+                    //         ngModel.$setViewValue(
+                    //             $scope.formatDate
+                    //                 ? $scope.formatDate(selectedDate)
+                    //                 : selectedDate.toLocaleDateString()
+                    //         );
+                    //     }
+
+                    //     $scope.onDateSelected();
+                    // }
+                };
                 $scope.pickDay = function (evt) {
+
                     var target = angular.element(evt.target);
 
                     if (target.hasClass('_day')) {
@@ -145,6 +215,7 @@
 
                         $scope.selectedDay = day;
                         selectedDate = new Date($scope.year, $scope.month, day);
+                        // $scope.selectedDates.push(selectedDate);
 
                         if (ngModel) {
                             ngModel.$setViewValue(
