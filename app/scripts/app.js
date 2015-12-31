@@ -10,6 +10,8 @@
  */
 angular
   .module('budgetApp', [
+    'ngMessages',
+    'ngMaterial',
     'mp.datePicker',
     'ngAnimate',
     'ngCookies',

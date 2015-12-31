@@ -52,6 +52,22 @@
             link: function ($scope, $element, $attributes, ngModel) {
                 if(!$scope.selectedDates){
                     $scope.selectedDates = [];
+                    $scope.$watchCollection('selectedDates', function (newNames, oldNames) {
+                        //reset the date selection 
+                        for (var i = 0; i <= 30; i++) {                       
+                            var currentday = days[i];
+                            currentday.selected = false;
+                            var currentdayDate = new Date($scope.year, $scope.month,  i+1);
+                            for(var j = $scope.selectedDates.length  - 1; j >= 0; j--) {
+                                var selectedDate = $scope.selectedDates[j];
+                                if(currentdayDate.getFullYear() === selectedDate.getFullYear() && 
+                                    currentdayDate.getMonth() === selectedDate.getMonth() && 
+                                    currentdayDate.getDate() === selectedDate.getDate()){
+                                    currentday.selected = true;
+                                }  
+                            }                                           
+                        }
+                    });
                 }
                 var selectedDate = null,
                     days = [], // Slices of this are used for ngRepeat
