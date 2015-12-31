@@ -10,6 +10,7 @@
  */
 angular
   .module('budgetApp', [
+    'mp.datePicker',
     'ngAnimate',
     'ngCookies',
     'ngResource',
