@@ -56,7 +56,7 @@ Welcome
 		    <h2 class="md-toolbar-tools">
 		      <span>Selected Dates</span>
 		    </h2>
-		 	<md-button ng-click="main.copyFirstRow(item)">Copy Paste First Row</md-button>
+		 	<!-- <md-button ng-click="main.copyFirstRow(item)">Copy Paste First Row</md-button> -->
 	  	</div>
 	  </md-toolbar>
 	  <md-content>
@@ -66,27 +66,6 @@ Welcome
 		        <div layout-margin="50">
 		        	{{item | date : 'EEEE, M/d/yy'}}
 		        </div>
-
-		        <md-input-container>
-		          <label>From</label>
-		          <input name="fromTime" ng-model="item.fromTime" ui-mask="99:99"  ui-mask-placeholder ui-mask-placeholder-char="_"
-		          	/>
-		          <div class="hint" ng-if="showHints">##:##</div>
-		          <div ng-messages="item.fromTime.$error" ng-if="!showHints">
-		            <div ng-message="pattern">##:## - Please enter a valid time.</div>
-		          </div>
-		        </md-input-container>
-		        <md-input-container>
-		          <label>To</label>
-		          <input name="toTime" ng-model="item.toDate" ui-mask="99:99"  ui-mask-placeholder ui-mask-placeholder-char="_"
-		          	/>
-		          <div class="hint" ng-if="showHints">##:##</div>
-		          <div ng-messages="item.toDate.$error" ng-if="!showHints">
-		            <div ng-message="pattern">##:## - Please enter a valid time.</div>
-		          </div>
-		        </md-input-container>			
-				
-
 	            <md-button ng-click="main.deleteDate(item)">Delete</md-button>
 	        <md-divider></md-divider>
 	      </md-list-item>
@@ -96,12 +75,55 @@ Welcome
 	 </div>
 </div>
 
+<h3>Time </h3>
+<md-input-container>
+  <label>From</label>
+  <input name="fromTime" ng-model="item.fromTime" ui-mask="99:99"  ui-mask-placeholder ui-mask-placeholder-char="_"
+  	/>
+  <div class="hint" ng-if="showHints">##:##</div>
+  <div ng-messages="item.fromTime.$error" ng-if="!showHints">
+    <div ng-message="pattern">##:## - Please enter a valid time.</div>
+  </div>
+</md-input-container>
+<md-input-container>
+  <label>To</label>
+  <input name="toTime" ng-model="item.toDate" ui-mask="99:99"  ui-mask-placeholder ui-mask-placeholder-char="_"
+  	/>
+  <div class="hint" ng-if="showHints">##:##</div>
+  <div ng-messages="item.toDate.$error" ng-if="!showHints">
+    <div ng-message="pattern">##:## - Please enter a valid time.</div>
+  </div>
+</md-input-container>				
+<md-input-container>
+  <label>Duration</label>
+  <input name="duration" ng-model="item.duration" ui-mask="99:99"  ui-mask-placeholder ui-mask-placeholder-char="_"
+  	/>
+  <div class="hint" ng-if="showHints">##:##</div>
+  <div ng-messages="item.duration.$error" ng-if="!showHints">
+    <div ng-message="pattern">##:## - Please enter a valid time.</div>
+  </div>
+</md-input-container>	
 
-<h2>Invite Participants(optional)</h2>
+
+<h3>
+	Invite Participants(optional)     
+	<a class="btn btn-default pull-right" ng-href="#/connect" >
+        <i class="fa fa-user-plus"></i> Create Contact
+    </a>            
+
+</h3>
 <div>
-    <md-chips ng-model="main.participants" readonly="false"
-    	 placeholder="Enter an email address" delete-button-label="Remove Tag" delete-hint="Press delete to remove tag" secondary-placeholder="Enter an email address"></md-chips>
-
+    <md-contact-chips
+        ng-model="main.contacts"
+        md-contacts="main.querySearch($query)"
+        md-contact-name="name"
+        md-contact-image="image"
+        md-contact-email="email"
+        md-require-match="true"
+        md-highlight-flags="i"
+        filter-selected="main.filterSelected"
+        placeholder="Invite Participants">
+    </md-contact-chips>
 
 </div> 
 
