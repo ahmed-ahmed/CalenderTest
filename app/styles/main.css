@@ -1,3 +1,10 @@
+.inline {display: inline; margin:0; padding: 0; margin-bottom: 25px;}
+.inline li {display: inline; padding-right: 15px;}
+
+.toolbar{
+  margin: 10px
+}
+
 .highlight {
   color: #ff0000;
 }

@@ -1,91 +1,48 @@
+<div class="row toolbar">
+	<ul class="inline">
+		<li>select: </li>
+		<li><a href ng-click="dashboard.dateFilter('all')">All</a></li>
+		<li><a href ng-click="dashboard.dateFilter('year')">Year</a></li>
+		<li><a href ng-click="dashboard.dateFilter('month')">Month</a></li>
+		<li><a href ng-click="dashboard.dateFilter('week')">Week</a></li>
+		<li><a href ng-click="dashboard.dateFilter('today')">Today</a></li>
+
+		<li>
+		| Participant: 
+			<select name="" id="">
+				<option >Select Participant</option>
+				<option ng-repeat="p in dashboard.participants" value="{{p.id}}">{{p.name}}</option>
+			</select>		
+		</li>
+
+		<li>
+	        | <input type="checkbox"> My Meetings only
+		</li>
+	</ul>
+    <a class="btn btn-default pull-right" ng-href="#/connect" >
+        <i class="fa fa-user-plus"></i> Create New
+    </a>            
+</div>
 <div class="row">
-	<div class="col-md-4">
-		<h3>Accounts</h3>
-
-		 
-
-		<accordion>
-		    <accordion-group is-open="status.open">
-		      <accordion-heading>
-		      <div style="width:100%;">
-		      	<div style="width:50%; float:left">Cash</div>
-		      	<div style="width:50%; float:right">3,985,13.89</div>
-		      	<div  style="clear:left"></div>
-		      </div>
-		      </accordion-heading>
-				<table class="table table-bordered">
-			<tr ng-repeat="account in accounts">
-				<td>
-					<strong>{{account.name}}</strong><br/>
-					<small>{{account.type}}</small><br/>
-					<small>Balance: {{account.balance}}</small>
-				</td>
-			</tr>
-
-			
-		</table>
-
-		    </accordion-group>
-		    <accordion-group is-open="status.open">
-		      <accordion-heading>
-		      <div>
-		      	<div style="width:50%; float:left">Credit Cards</div>
-		      	<div style="width:50%; float:right">3,985,13.89</div>
-		      	<div  style="clear:left"></div>
-		      </div>
-		      </accordion-heading>
-		    </accordion-group>
-		    <accordion-group is-open="status.open">
-		      <accordion-heading>
-		      <div>
-		      	<div style="width:50%; float:left">Assets</div>
-		      	<div style="width:50%; float:right">3,985,13.89</div>
-		      	<div  style="clear:left"></div>
-		      </div>
-		      </accordion-heading>
-		    </accordion-group>		    
-		  </accordion>
-
-
-		<!-- <table class="table table-bordered">
-			<tr ng-repeat="account in accounts">
-				<td>
-					<strong>{{account.name}}</strong><br/>
-					<small>{{account.type}}</small><br/>
-					<small>Balance: {{account.balance}}</small>
-				</td>
-			</tr>
-
-			
-		</table> -->
-	</div>
-
-	<div class="col-md-8">
-		<h3>Transactions</h3>
-		<table class="table table-hover table-condensed">
-			<tr>
-				<th>Description</th>
-				<th>Category</th>
-				<th>amount</th>
-			</tr>
-			<tr ng-repeat="t in transactions">
-				<td>{{t.description}}</td>
-				<td>
-					<edit-category category="{{t.category}}" categories="categories" selection-changed="categorySelected"></edit-category>
-				</td>
-				<td>{{t.value}}</td>
-			</tr>
-			 
-			<tr>
-				<td></td>
-				<td></td>
-				<td>total: 235.23</td>
-			</tr>
-
-		</table>
-	    <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="7"
-			previous-text="‹" next-text="›" first-text="«" last-text="»" boundary-links="true" rotate="false"
-	    ></pagination>
-
-	</div>
+	<table class="table">
+		<tr>
+			<td>Date(From)</td>
+			<td>Date(To)</td>
+			<td>Time(From)</td>
+			<td>Time(To)</td>
+			<td>Duration</td>
+			<td>Participants#</td>
+			<td>Status</td>
+		</tr>
+		<tr ng-repeat="appointment in dashboard.appointments  
+				| dateRange:dashboard.startDate:dashboard.endDate">
+			<td>{{appointment.fromDate | date:'MM/dd/yyyy'}}</td>
+			<td>{{appointment.toDate | date:'MM/dd/yyyy' }}</td>
+			<td>{{appointment.fromTime | date:'HH:mm a'}}</td>
+			<td>{{appointment.toTime | date:'HH:mm a'}}</td>
+			<td>{{appointment.Duration}}</td>
+			<td>{{appointment.participants}}</td>
+			<td>{{appointment.status}}</td>
+		</tr>
+	</table>				
 </div>
